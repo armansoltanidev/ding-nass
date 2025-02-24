@@ -37,6 +37,7 @@ export default () => {
     <div className='mx-auto flex h-screen max-w-lg animate-delay-200 animate-fade-up flex-col gap-y-2 p-6 px-4'>
       <Header />
       <Wallet />
+      <ModeToggle />
     </div>
   );
 };
