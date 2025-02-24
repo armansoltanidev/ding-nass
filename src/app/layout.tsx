@@ -1,10 +1,13 @@
-import '@/styles/app.css'
+import "@/styles/app.css";
 
-import Providers from '@/components/providers'
-import { siteConfig } from '@/config/site'
-import { GeistSans } from 'geist/font/sans'
-import type { Metadata } from 'next'
-import type { PropsWithChildren } from 'react'
+import Providers from "@/components/providers";
+import { siteConfig } from "@/config/site";
+import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
+import type { PropsWithChildren } from "react";
+import localFont from "next/font/local";
+
+const yekanSansX = localFont({ src: "./../fonts/IRANYekanXVF.woff2" });
 
 export const metadata: Metadata = {
   title: {
@@ -13,13 +16,13 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
-}
+};
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fa" dir="rtl" suppressHydrationWarning>
       <head>
         <link rel="theme-color" href="#000000" />
         <link rel="manifest" href="/manifest.json" />
@@ -28,9 +31,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </head>
-      <body className={GeistSans.className}>
+      <body className={yekanSansX.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }

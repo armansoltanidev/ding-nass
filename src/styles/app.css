@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./theme.css";
 
+@custom-variant dark (&:is(.dark *));
+
 @variant dark (&:is(.dark *));
 
 @plugin "tailwindcss-animate";
@@ -65,6 +67,15 @@
     @apply border-border select-none outline-ring/50;
   }
 
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
   body {
     @apply bg-background text-foreground;
   }
